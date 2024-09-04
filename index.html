@@ -6,9 +6,131 @@
     <title>Reaction</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
 </head>
 <body>
     <h1>Race Reaction Tests</h1>
+    <p></p>
+    <div class="circle1" id = "circle1"></div>
+    <div class="circle2" id = "circle2"></div>
+    <div class="circle3" id = "circle3"></div>
+    <div class="circle4" id = "circle4"></div>
+    <div class="circle5" id = "circle5"></div>
+    <div class = "timeR" id = "timeR"></div>
+    <script>
+
+        const circle1 = document.getElementById('circle1');
+        const circle2 = document.getElementById('circle2');
+        const circle3 = document.getElementById('circle3');
+        const circle4 = document.getElementById('circle4');
+        const circle5 = document.getElementById('circle5');
+
+        let currentCircle = 1;
+
+        // Timer function
+        function startTimer() {
+            // Set initial time for countdown (in seconds)
+            let timeLeft = 3;
+
+            // Function to update the timer
+            const timerInterval = setInterval(() => {
+                if (timeLeft > 0) {
+                    if (currentCircle === 1) {
+                        circle1.textContent = timeLeft; // Display time left in circle 1
+                    }
+                    if (currentCircle === 2){
+                        circle2.textContent = timeLeft; // Display time left in circle 2
+                    }
+                    if(currentCircle === 3)
+                    {
+                        circle3.textContent = timeLeft;
+                    }
+                    if (currentCircle === 4)
+                    {
+                        circle4.textContent = timeLeft;
+                    }
+                    if(currentCircle === 5)
+                    {
+                        circle5.textContent = timeLeft;
+                    }
+                    timeLeft--; // Decrease time by 1 second
+                } else {
+                    clearInterval(timerInterval); // Stop the timer
+
+                    // Change the color of the current circle
+                    if (currentCircle === 1) {
+                        circle1.style.textContent = " ";
+                        circle1.style.backgroundColor = 'red'; // Change circle 1 color to red
+                    }
+                    if (currentCircle === 2){
+                        circle2.style.textContent = " ";
+                        circle2.style.backgroundColor = 'red'; // Change circle 2 color to red
+                    }
+                    if (currentCircle === 3){
+                        circle3.style.textContent = " ";
+                        circle3.style.backgroundColor = 'red'; // Change circle 2 color to red
+                    }
+                    if (currentCircle === 4){
+                        circle4.style.textContent = " ";
+                        circle4.style.backgroundColor = 'red'; // Change circle 2 color to red
+                    }
+                    if (currentCircle === 5){
+                        circle5.style.textContent = " ";
+                        circle5.style.backgroundColor = 'red'; // Change circle 2 color to red
+                    }
+
+
+                    // Wait a moment before resetting the color and text, and switching to the other circle
+                    setTimeout(() => {
+                        if (currentCircle === 1) {
+                            circle1.style.textContent = " ";
+                            currentCircle = 2; // Switch to circle 2 for the next round
+                            startTimer(); // Restart the timer
+                        }
+                        if (currentCircle === 2) {
+                            circle2.style.textContent = " ";
+                            currentCircle = 3; // Switch to circle 2 for the next round
+                            startTimer(); // Restart the timer
+                        }
+                        if (currentCircle === 3) {
+                            circle3.style.textContent = " ";
+                            currentCircle = 4; // Switch to circle 2 for the next round
+                            startTimer(); // Restart the timer
+                        }
+                        if (currentCircle === 4) {
+                            circle4.style.textContent = " ";
+                            currentCircle = 5; // Switch to circle 2 for the next round
+                            startTimer(); // Restart the timer
+                        }
+                        if (currentCircle === 5) {
+                            circle5.style.textContent = " ";
+                            currentCircle = 0; // Switch to circle 2 for the next round
+                            startTimer(); // Restart the timer
+                        }
+                    }, 1000); // Wait 1 second before restarting
+                }
+            }, 1000); // Update every second
+        }
+
+        // Start the timer when the page loads
+        document.addEventListener('mousedown', function(event) {
+            if (event.button === 0) {
+                startTimer();
+                currentCircle = 1;
+            }
+        });
+        document.addEventListener('mouseup', function(event) {
+            // Check which mouse button was released
+            if (event.button === 0) {
+                currentCircle = 0;
+                circle1.style.background = "#4d4d4d";
+                circle2.style.background = "#4d4d4d";
+                circle3.style.background = "#4d4d4d";
+                circle4.style.background = "#4d4d4d";
+                circle5.style.background = "#4d4d4d";
+
+
+            }
+        });
+    </script>
 </body>
 </html>

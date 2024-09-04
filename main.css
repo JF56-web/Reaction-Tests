@@ -7,12 +7,87 @@
 
 body{
     background-color: #79eac6ff;
+    display: flex;
 }
 
 h1{
-    font-size: 4.5em;
+    font-size: 3.5em;
     font-weight: bold;
     font-family: font;
     position: fixed;
     top: -0.8em; 
+}
+
+.circle1{
+    width: 4em; 
+    height: 4em;
+    background-color: #4d4d4d; 
+    border-radius: 50%; 
+    display: flex;
+    position: fixed;
+    top: 6em;   
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+}
+
+.circle2{
+    width: 4em; 
+    height: 4em;
+    background-color: #4d4d4d; 
+    border-radius: 50%; 
+    display: flex;
+    position: fixed;
+    top: 6em;
+    left: 5em;   
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+}
+
+.circle3{
+    width: 4em; 
+    height: 4em;
+    background-color: #4d4d4d; 
+    border-radius: 50%; 
+    display: flex;
+    position: fixed;
+    top: 6em;
+    left: 10em;   
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+}
+
+.circle4{
+    width: 4em; 
+    height: 4em;
+    background-color: #4d4d4d; 
+    border-radius: 50%; 
+    display: flex;
+    position: absolute;
+    top: 6em;
+    left: 15em;   
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+}
+
+.circle5{
+    width: 4em; 
+    height: 4em;
+    background-color: #4d4d4d; 
+    border-radius: 50%; 
+    display: flex;
+    position: absolute;
+    top: 6em;
+    left: 20em;   
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
 }
